@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --text-color : #222;
+    --bkg-color: #d3d5e4;
+    --btn-text-color : white;
+    --btn-bg-color: rgb(11,18,160);
+    --card-background : #aeb8b8;
+    --nav-bar-bg : #506583;
+    --card-header-bg: #9cc9f1;
+}
+
+body.dark-theme {
+    --text-color : #eee;
+    --bkg-color: #5f5656;
+    --btn-text-color : rgb(46,43,43);
+    --btn-bg-color: rgb(20,211,295);
+    --card-background : #628585;
+    --nav-bar-bg : #25201a;
+    --card-header-bg : #586067;
+}
+
+body , .card {
+    background: var(--bkg-color);
+}
+
+.navbar, .navbar-dar {
+    background: var(--nav-bar-bg) !important;
+}
+
+.currency-card, .list-group-currency-theme {
+    background-color: var(--card-background);
+}
+
+.list-group-theme {
+    background: var(--bkg-color) !important;
+    border-color: #222;
+}
+
+h1, button, .nav-link, .brandName {
+    color:  var(--text-color);
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: var(--text-color);
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.card-header {
+    background-color: var(--card-header-bg);
+}
+
+::ng-deep .cdk-overlay-container {
+    z-index: 9999;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.close-btn {
+    width: 5%;
+    float: right;
+}
+
+.close-btn:hover {
+    cursor: pointer;
+}
+
+#exampleModalLabel {
+    width: 95%;
+    font-size: 16px;
+}

@@ -1,0 +1,27 @@
+img#logo{
+    max-width:50px;
+}
+
+.brandName {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+.topnav-right {
+    float: right;
+}
+
+.card-header {
+    text-align: center;
+}
+
+a:focus, .focus-nav {
+    background-color: #a2a0a8;
+    color: black;
+}
+
+.sub-title {
+    font-family: 'Roboto';
+    font-weight: 600;
+}

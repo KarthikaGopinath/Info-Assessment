@@ -1,0 +1,74 @@
+.currency-card {
+    margin: 20px;
+    padding: 20px;
+}
+
+.float-rg {
+    float: right;
+}
+
+.currency-details {
+    width: 100%;
+}
+
+.list-group-item {
+    border: none;
+}
+
+p, span {
+    color: black;
+}
+
+.currency-name {
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+
+.margin-10px {
+    margin: 10px;
+}
+
+.currency-title {
+    width: 100%;
+}
+
+.conversion-rate {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.card-title {
+    width: 100%;
+}
+
+.width-90p {
+    width: 90%;
+    display: inline;
+}
+
+.width-5p {
+    float: right;
+    display: inline;
+}
+
+.float {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 30px;
+    background-color: #19196c;
+}
+
+::ng-deep .cdk-overlay-container {
+    z-index: 9999;
+}
+
+.plus-icon {
+    font-size: 14px;
+    color: white;
+}

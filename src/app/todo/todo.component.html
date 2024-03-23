@@ -1,0 +1,81 @@
+<section>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+          <button type="button" class="btn btn-primary" mdbRipple (click)="getList('all')">All</button>
+        </div>
+        <div class="btn-group me-2" role="group" aria-label="Second group">
+          <button type="button" class="btn btn-danger" mdbRipple (click)="getList('pending')">Pending</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Third group">
+          <button type="button" class="btn btn-success" mdbRipple (click)="getList('completed')">Completed</button>
+        </div>
+    </div>
+</section>
+<section class="task-section">
+    <div class="list-group list-group-mine" *ngIf="toDoList.length > 0">    
+        <a class="list-group-item list-group-theme" *ngFor="let todos of toDoList;let i= index;">
+            <span class="to-do-label">{{todos.todo}}</span>
+            <span class="close-btn">
+                <i class="fa fa-window-close" aria-hidden="true" (click)="removeTask(i)"></i>
+            </span>
+        </a>
+    </div>
+    <ul class="list-group list-group-mine" *ngIf="toDoList.length == 0">
+        <li class="list-group-item">No Tasks found.</li>
+    </ul>
+</section>
+
+<section>
+    <div class="add-task">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="openTaskPopup('show')">Add Task</button>
+    </div>
+</section>
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form [formGroup]="form" (ngSubmit)="addNewTask();">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+                    
+                    <span class="close-btn">
+                        <i class="fa fa-window-close" aria-hidden="true" (click)="openTaskPopup('hide')"></i>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    <div class="example-container">
+                        <mat-form-field>
+                            <mat-label>Task</mat-label>
+                            <input matInput formControlName="name" required [ngClass]="{ 'is-invalid': isSubmitted && form.controls['name'].errors }">
+                            <div *ngIf="isSubmitted && form.controls['name'].errors" class="invalid-feedback">
+                                <div *ngIf="form.controls['name'].errors['required']">Task is required</div>
+                                <div *ngIf="form.controls['name'].errors['minlength']">
+                                  Task must be at least 5 characters
+                                </div>
+                                <div *ngIf="form.controls['name'].errors['maxlength']">
+                                    Task must be maximum 30 characters
+                                </div>
+                            </div>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Status</mat-label>
+                            <mat-select formControlName="status" [ngClass]="{ 'is-invalid': isSubmitted && form.controls['status'].errors }">
+                                <mat-option value="pending">Pending</mat-option>
+                                <mat-option value="completed">Completed</mat-option>
+                            </mat-select>
+                            <div *ngIf="isSubmitted && form.controls['status'].errors" class="invalid-feedback">
+                                <div *ngIf="form.controls['status'].errors['required']">Status is required</div>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="openTaskPopup('hide')">Close</button>
+                    <button type="button" class="btn btn-primary" type="submit">Save changes</button>
+                </div>
+            </div>
+        </form>       
+    </div>
+</div>

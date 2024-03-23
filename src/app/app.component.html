@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark">
+  <div class="container-fluid">
+      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item task-nav">
+                  <a id="todo" class="nav-link" [routerLink]="['/to-do']" (click)="changeOption('Todo App')">Todo</a>
+              </li>
+              <li class="nav-item task-nav">
+                  <a id="currencyConverter" class="nav-link" [routerLink]="['/currency-converter']" (click)="changeOption('Currency Converter')">Currency Converter</a>
+              </li>
+          </ul>
+      </div>
+      <div class="mx-auto order-0">
+          <a class="navbar-brand mx-auto"><img id="logo" class="d-inline-block mr-1" alt="Logo" src="../assets/infocusp_logo.jpg"><span class="brandName"> INFOCUSP</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item" *ngIf="!darkMode">
+                <button type="button" class="btn btn-dark" (click)="changeColorTheme()">Dark Mode</button>
+              </li>
+              <li class="nav-item" *ngIf="darkMode">
+                <button type="button" class="btn btn-light" (click)="changeColorTheme()">Light Mode</button>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<div class="card">
+  <div class="card-header">
+    <h1 class="sub-title">{{subTitle}}</h1>
+  </div>
+  <div class="card-body">
+    <router-outlet></router-outlet>
+  </div>
+</div>

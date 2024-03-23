@@ -1,0 +1,46 @@
+{
+    "currencyList": [
+      {
+        "id": 1,
+        "source": "INR",
+        "target": "USD",
+        "conversionRate": 1,
+        "lastUpdatedDate" : ""
+      },
+      {
+        "id": 2,
+        "source": "USD",
+        "target": "EUR",
+        "conversionRate": 1,
+        "lastUpdatedDate" : ""
+      },
+      {
+        "id": 3,
+        "source": "AED",
+        "target": "THB",
+        "conversionRate": 1,
+        "lastUpdatedDate" : ""
+      },
+      {
+        "id": 4,
+        "source": "SEK",
+        "target": "XCD",
+        "conversionRate": 1,
+        "lastUpdatedDate" : ""
+      },
+      {
+        "id": 5,
+        "source": "CAD",
+        "target": "GGP",
+        "conversionRate": 1,
+        "lastUpdatedDate" : ""
+      }, 
+      {
+        "id": 6,
+        "source": "CAD",
+        "target": "INR",
+        "conversionRate": 1,
+        "lastUpdatedDate" : ""
+      }
+    ]
+  }
